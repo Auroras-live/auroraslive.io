@@ -1,0 +1,60 @@
+body {
+  background: #272b30 url(../images/background.jpg) repeat-x fixed;
+}
+h1, h2, h3, h4, h5, p, b, div {
+  font-family: 'Open Sans' !important;
+}
+.navbar-inverse {
+  background: rgba(128, 128, 128, 0.75) !important;
+  border: none !important;
+}
+
+.header-spacer {
+  margin-top: 70px !important;
+}
+
+.center {
+  margin: 0 auto;
+}
+.nounderline:hover {
+  text-decoration: none !important;
+}
+
+.xx-large, .x-large {
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  text-align: center;
+}
+
+.xx-large:hover, .x-large:hover {
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
+.xx-large h1 {
+  font-size: 300%;
+}
+
+.x-large h1 {
+  font-size: 200%;
+}
+
+pre, code {
+  background: rgba(255,255,255,0.1) !important;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.pln { color: #fff !important; }  /* plain text */
+.str { color: #fff !important; }  /* string content */
+.kwd { color: #fff !important; }  /* a keyword */
+.com { color: #fff !important; }  /* a comment */
+.typ { color: #fff !important; }  /* a type name */
+.lit { color: #fff !important; }  /* a literal value */
+/* punctuation, lisp open bracket, lisp close bracket */
+.pun, .opn, .clo { color: #fff !important; }
+.tag { color: #fff !important; }  /* a markup tag name */
+.atn { color: #fff !important; }  /* a markup attribute name */
+.atv { color: #fff !important; }  /* a markup attribute value */
+.dec, .var { color: #fff !important; }  /* a declaration; a variable name */
+.fun { color: #fff !important; }  /* a function name */
