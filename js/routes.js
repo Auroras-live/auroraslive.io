@@ -14,12 +14,22 @@ angular.module("app.routes", [])
     })
     .when("/api/introduction", {
       title: "API",
+      templateUrl: "views/api/introduction.html",
+      controller: "api"
+    })
+    .when("/api/all", {
+      title: "API",
       templateUrl: "views/api/all.html",
       controller: "api"
     })
-    .when("/api/introduction", {
-      title: "API",
-      templateUrl: "views/api/introduction.html",
+    .when("/api/ace", {
+      title: "ACE",
+      templateUrl: "views/api/ace.html",
+      controller: "api"
+    })
+    .when("/api/archive", {
+      title: "Archives",
+      templateUrl: "views/api/archive.html",
       controller: "api"
     })
     .when("/sensor", {
