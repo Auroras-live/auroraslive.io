@@ -32,6 +32,11 @@ angular.module("app.routes", [])
       templateUrl: "views/api/archive.html",
       controller: "api"
     })
+    .when("/api/embed", {
+      title: "Embed",
+      templateUrl: "views/api/embed.html",
+      controller: "api"
+    })
     .when("/sensor", {
       title: "Sensor Network",
       templateUrl: "views/sensor/index.html",

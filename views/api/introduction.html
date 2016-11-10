@@ -70,8 +70,8 @@
     </p>
     <h3>Returns</h3>
     <p>Returns the colour in the specified format</p>
-    <a class="btn btn-info" href="" ng-click="data = $root.getResults('?type=ace&data=bz&tz=' + $root.timezone)"><i class="fa fa-play"></i> See Example</a>
-    <p><pre ng-show="$root.resultsData">{{ $root.resultsData }}</pre></p>
+    <a class="btn btn-info" href="" ng-click="$root.getResults('?type=ace&data=bz&tz=' + $root.timezone, 'tz')"><i class="fa fa-play"></i> See Example</a>
+    <p><pre ng-show="$root.resultsData['tz']">{{ $root.resultsData['tz'] }}</pre></p>
 </div>
 <div ng-show="section == 'formats'">
 
@@ -98,8 +98,8 @@
     </p>
     <h3>Returns</h3>
     <p>Returns the colour in the specified format</p>
-    <a class="btn btn-info" href="" ng-click="data = $root.getResults('?type=ace&data=bz&format=xml', true)"><i class="fa fa-play"></i> See Example</a>
-    <p><pre ng-show="$root.resultsData">{{ $root.resultsData }}</pre></p>
+    <a class="btn btn-info" href="" ng-click="$root.getResults('?type=ace&data=bz&format=xml', 'formats', true)"><i class="fa fa-play"></i> See Example</a>
+    <p><pre ng-show="$root.resultsData['formats']">{{ $root.resultsData['formats'] }}</pre></p>
 </div>
 <div ng-show="section == 'colours'">
     <h2>Colours</h2>
@@ -132,8 +132,8 @@
     </p>
     <h3>Returns</h3>
     <p>Returns the colour in the specified format</p>
-    <a class="btn btn-info" href="" ng-click="data = $root.getResults('?type=ace&data=bz&colour=hex')"><i class="fa fa-play"></i> See Example</a>
-    <p><pre ng-show="$root.resultsData">{{ $root.resultsData }}</pre></p>
+    <a class="btn btn-info" href="" ng-click="$root.getResults('?type=ace&data=bz&colour=hex', 'colour')"><i class="fa fa-play"></i> See Example</a>
+    <p><pre ng-show="$root.resultsData['colour']">{{ $root.resultsData['colour'] }}</pre></p>
     <p>Colours are determined as below:</p>
     <p>
         <table class="table table-striped table-bordered table-hover">

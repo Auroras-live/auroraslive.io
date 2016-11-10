@@ -94,5 +94,6 @@
     <code>http://api.auroras.live/v1/?type=ace&data=kp</code>
 </p>
 <h3>Returns</h3>
-<a class="btn btn-info" href="" ng-click="data = $root.getResults('?type=ace&data=kp')"><i class="fa fa-play"></i> See Example</a>
-<p><pre ng-show="$root.resultsData">{{ $root.resultsData }}</pre></p>
+<p>The current, 1 hour and 4 hour Kp forecasts</p>
+<a class="btn btn-info" href="" ng-click="$root.getResults('?type=ace&data=kp', 'ace')"><i class="fa fa-play"></i> See Example</a>
+<p><pre ng-show="$root.resultsData['ace']">{{ $root.resultsData['ace'] }}</pre></p>

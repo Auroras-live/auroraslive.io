@@ -113,5 +113,6 @@
     <code>http://api.auroras.live/v1/?type=all&lat=40.7813913&long=-73.976902&forecast=false&threeday=false</code>
 </p>
 <h3>Returns</h3>
-<a class="btn btn-info" href="" ng-click="data = $root.getResults('?type=all&lat=40.7813913&long=-73.976902&forecast=false&threeday=false')"><i class="fa fa-play"></i> See Example</a>
-<p><pre ng-show="$root.resultsData">{{ $root.resultsData }}</pre></p>
+<p>Returns <code>ace</code>, <code>probability</code> and <code>weather</code>. Actively excludes 9 day weather forecast and 3 day Kp forecast</p>
+<a class="btn btn-info" href="" ng-click="$root.getResults('?type=all&lat=40.7813913&long=-73.976902&forecast=false&threeday=false', 'all')"><i class="fa fa-play"></i> See Example</a>
+<p><pre ng-show="$root.resultsData['all']">{{ $root.resultsData['all'] }}</pre></p>

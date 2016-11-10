@@ -28,13 +28,13 @@
             <td>start</td>
             <td>Date</td>
             <td>Any valid <a href="http://php.net/manual/en/datetime.formats.compound.php">PHP-compatible date</a></td>
-            <td>The date to begin retrieving data from. Only required if <code>action</code> is <code>search</code></td>
+            <td>The date to begin retrieving data from. <b>Only required if <code>action</code> is <code>search</code></b></td>
           </tr>
           <tr>
               <td>end</td>
               <td>Date</td>
               <td>Any valid <a href="http://php.net/manual/en/datetime.formats.compound.php">PHP-compatible date</a></td>
-              <td>The date to end retrieving data from. Only required if <code>action</code> is <code>search</code></td>
+              <td>The date to end retrieving data from. <b>Only required if <code>action</code> is <code>search</code></b></td>
             </tr>
     </tbody>
 </table>
@@ -45,5 +45,12 @@
     <code>http://api.auroras.live/v1/?type=archive&action=stats</code>
 </p>
 <h3>Returns</h3>
-<a class="btn btn-info" href="" ng-click="data = $root.getResults('?type=archive&action=stats')"><i class="fa fa-play"></i> See Example</a>
-<p><pre ng-show="$root.resultsData">{{ $root.resultsData }}</pre></p>
+<a class="btn btn-info" href="" ng-click="$root.getResults('?type=archive&action=stats', 'archive1')"><i class="fa fa-play"></i> See Example</a>
+<p><pre ng-show="$root.resultsData['archive1']">{{ $root.resultsData['archive1'] }}</pre></p>
+<h3>Example 2</h3>
+<p>
+    <code>http://api.auroras.live/v1/?type=archive&action=search&start=1am&end=1:01am</code>
+</p>
+<h3>Returns</h3>
+<a class="btn btn-info" href="" ng-click="$root.getResults('?type=archive&action=search&start=1am&end=1:01am', 'archive2')"><i class="fa fa-play"></i> See Example</a>
+<p><pre ng-show="$root.resultsData['archive2']">{{ $root.resultsData['archive2'] }}</pre></p>
