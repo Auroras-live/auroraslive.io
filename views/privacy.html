@@ -1,0 +1,14 @@
+<h1>Privacy and Terms of Use</h1>
+<h3>What we store and how we use it</h3>
+<h4>Location</h4>
+<p>Some parts of this API (and by extension, products that use the API) require you to provide a valid location. The locations you provide are split into two categories: fine and coarse.</p>
+<p>Your fine (precise) location is sent to <a href="http://met.no">met.no</a> in order to provide you with weather for your area. This fine location is not stored by Auroras.live, but may be stored by met.no. Please see their website for more information.</p>
+<p>Your coarse (inaccurate) location is stored when you or the product you use calls the <a href="#/api/all">all module</a>. Almost all Auroras.live products (including, but not limited to the mobile apps, Pebble watch, sensor network and website) use this module. This location is rounded to three decimal places, which means it's inaccurate up to 400m. This data is used internally to improve Auroras.live products, including determining popular aurora hunting areas. The data is intentionally inaccurate to allow geographical areas to be grouped together (e.g. users standing around a lake can count as 1 location).</p>
+<p>These locations may be shared with the public via static images, such as a <a href="https://www.facebook.com/auroras.live/photos/a.285302865137599.1073741829.225256167808936/332373383763880/?type=3">small world map</a> showing popular locations, or via a text post on social media (e.g. "We have 300 users in Tasmania") or released via the app / website as an aurora hunting location (as long as the location is in a public area. Non-hunting locations are not included)</p>
+
+<h4>Unique Identifiers</h4>
+<p>Upon launch, the mobile and watch apps send a unique ID to the Auroras.live API. This is used to send you push notifications and cannot be used to personally identify you. Along with this identifier, we store the type of app you're using (Android Free, Android Paid, iOS Free, iOS Paid or Pebble) and when your device was first and last seen. This information is used to improve Auroras.live products and also to send you better push notifications</p>
+<p>The site also generates session tokens, which are unique values that can be used to identify a user across repeated API calls. This is used for throttling (to stop users from abusing the system), to remember you when you're logged in, logging (to track down bugs and avoid abuse of the system) and also as part of Google Analytics to help us determine how the API is being used. These sessions are not permanent, and are updated frequently</p>
+
+<h3>Paid Services</h3>
+<p>Auroras.live is free and will remain free. In the future tiered pricing may come in to effect, but this will only affect heavy users of the site. This will be used to cover the costs of running the site and publishing the apps. Users will be warned prior to the changes taking place.</p>

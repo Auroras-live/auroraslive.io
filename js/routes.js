@@ -62,6 +62,11 @@ angular.module("app.routes", [])
       templateUrl: "views/sensor/index.html",
       controller: "sensor"
     })
+    .when("/privacy", {
+      title: "Privacy",
+      templateUrl: "views/privacy.html",
+      controller: "main"
+    })
     .otherwise({
       redirectTo: "/"
     });
