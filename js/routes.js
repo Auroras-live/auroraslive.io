@@ -37,6 +37,26 @@ angular.module("app.routes", [])
       templateUrl: "views/api/embed.html",
       controller: "api"
     })
+    .when("/api/images", {
+      title: "Images",
+      templateUrl: "views/api/images.html",
+      controller: "api"
+    })
+    .when("/api/locations", {
+      title: "Locations",
+      templateUrl: "views/api/locations.html",
+      controller: "api"
+    })
+    .when("/api/weather", {
+      title: "Weather",
+      templateUrl: "views/api/weather.html",
+      controller: "api"
+    })
+    .when("/api/usage", {
+      title: "Usage",
+      templateUrl: "views/api/usage.html",
+      controller: "api"
+    })
     .when("/sensor", {
       title: "Sensor Network",
       templateUrl: "views/sensor/index.html",

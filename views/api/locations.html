@@ -1,0 +1,16 @@
+<div ng-include="'views/api/nav.html'"></div>
+<h1>The Locations Module</h1>
+<p>The locations module currently returns aurora hunting locations to be displayed on a map</p>
+<h3>Required Parameters</h3>
+<p>There are no required parameters</p>
+<h3>Example</h3>
+<p>
+    <code>http://api.auroras.live/v1/?type=locations</code>
+</p>
+<h3>Returns</h3>
+<p>Returns a list of aurora hunting locations. To add more to the list, please contact <a href="mailto:admin@auroras.live">admin@auroras.live</a></p>
+<a class="btn btn-info" href="" ng-click="$root.getResults('?type=locations', 'locationlist')"><i class="fa fa-play"></i> See Example</a>
+<p><pre ng-show="$root.resultsData['locationlist']">{{ $root.resultsData['locationlist'] }}</pre></p>
+
+<hr />
+<div ng-include="'views/edit.html'"></div>

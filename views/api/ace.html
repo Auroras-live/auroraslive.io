@@ -1,3 +1,4 @@
+<div ng-include="'views/api/nav.html'"></div>
 <h1>The ACE Module</h1>
 <p>The ACE module (named due to the majority of the data coming from the ACE spacecraft) is the core the Auroras.live suite of apps and services. It returns important aurora hunting information, including Bz, Density, Speed, Kp forecasts and Nowcast probabilities</p>
 <p>All of these values return a <code>colour</code> indicating the level of activity. See <a href="#/api/introduction">the section on colours</a> for more information. Due to the way <code>kp</code> is structured, the colours are their own property. See the example below</p>
@@ -97,3 +98,5 @@
 <p>The current, 1 hour and 4 hour Kp forecasts</p>
 <a class="btn btn-info" href="" ng-click="$root.getResults('?type=ace&data=kp', 'ace')"><i class="fa fa-play"></i> See Example</a>
 <p><pre ng-show="$root.resultsData['ace']">{{ $root.resultsData['ace'] }}</pre></p>
+<hr />
+<div ng-include="'views/edit.html'"></div>

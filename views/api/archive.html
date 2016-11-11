@@ -1,3 +1,4 @@
+<div ng-include="'views/api/nav.html'"></div>
 <h1>The Archive Module</h1>
 <p>The Archive module lets you search through previous years' data. Due to the amount of data stored and transmitted, you can only search for three days worth of data in a single call.</p>
 <p>If you require more than three days worth of data, you can do multiple calls, but <b>don't do this to download large sets of data</b>. If you need large sets of data (typically more than two weeks), please contact <a href="mailto:admin@auroras.live">admin@auroras.live</a> for a MySQL dump</p>
@@ -54,3 +55,6 @@
 <h3>Returns</h3>
 <a class="btn btn-info" href="" ng-click="$root.getResults('?type=archive&action=search&start=1am&end=1:01am', 'archive2')"><i class="fa fa-play"></i> See Example</a>
 <p><pre ng-show="$root.resultsData['archive2']">{{ $root.resultsData['archive2'] }}</pre></p>
+
+<hr />
+<div ng-include="'views/edit.html'"></div>

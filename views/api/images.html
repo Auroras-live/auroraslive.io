@@ -1,0 +1,47 @@
+<div ng-include="'views/api/nav.html'"></div>
+<h1>The Images Module</h1>
+<p>The images module caches and returns images from various webcams, charts, satellite and models.</p>
+<h3>Required Parameters</h3>
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Valid ranges</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>action</code></td>
+        <td>String</td>
+        <td><code>list</code></td>
+        <td>Obtains the a list of images</td>
+      </tr>
+      <tr>
+        <td><code>image</code></td>
+        <td>String</td>
+        <td>An image as listed by <code>action=list</code></td>
+        <td>Returns the given image</td>
+      </tr>
+    </tbody>
+</table>
+<h3>Example 1</h3>
+<p>
+    <code>http://api.auroras.live/v1/?type=images&action=list</code>
+</p>
+<h3>Returns</h3>
+<p>Returns a list of images. The <code>cache</code> property tells you how long the image is cached</p>
+<a class="btn btn-info" href="" ng-click="$root.getResults('?type=images&action=list', 'imagelist')"><i class="fa fa-play"></i> See Example</a>
+<p><pre ng-show="$root.resultsData['imagelist']">{{ $root.resultsData['imagelist'] }}</pre></p>
+<h3>Example 2</h3>
+<p>
+    <code>http://api.auroras.live/v1/?type=images&image=yellowknife</code>
+</p>
+<h3>Returns</h3>
+<p>The aurora camera currently located in Yellowknife, NWT, Canada</p>
+<a class="btn btn-info" href="" ng-click="$root.resultsData['imageexample'] = 'http://api.auroras.live/v1/?type=images&image=yellowknife'"><i class="fa fa-play"></i> See Example</a>
+<p ng-show="$root.resultsData['imageexample']"><img src="{{ $root.resultsData['imageexample'] }}" width="50%"></p>
+
+<hr />
+<div ng-include="'views/edit.html'"></div>
