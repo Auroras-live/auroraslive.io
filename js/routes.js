@@ -13,12 +13,12 @@ angular.module("app.routes", [])
       controller: "api"
     })
     .when("/api/introduction", {
-      title: "API",
+      title: "Introduction",
       templateUrl: "views/api/introduction.html",
       controller: "api"
     })
     .when("/api/all", {
-      title: "API",
+      title: "All",
       templateUrl: "views/api/all.html",
       controller: "api"
     })
@@ -60,6 +60,21 @@ angular.module("app.routes", [])
     .when("/sensor", {
       title: "Sensor Network",
       templateUrl: "views/sensor/index.html",
+      controller: "sensor"
+    })
+    .when("/sensor/introduction", {
+      title: "Sensor Network Introduction",
+      templateUrl: "views/sensor/introduction.html",
+      controller: "sensor"
+    })
+    .when("/sensor/weathercam", {
+      title: "Weathercam",
+      templateUrl: "views/sensor/weathercam.html",
+      controller: "sensor"
+    })
+    .when("/sensor/images", {
+      title: "images",
+      templateUrl: "views/sensor/images.html",
       controller: "sensor"
     })
     .when("/privacy", {

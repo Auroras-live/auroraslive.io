@@ -1,0 +1,13 @@
+<h1>Adding a weather or aurora camera</h1>
+<p>If you wish to add your own cam without using the Auroras.live <a href="#/sensor/weathercam">Weathercam software</a>, then you can do so easily</p>
+<h2>Requirements</h2>
+<p>In order to successfully upload an image to the sensor network, it must meet the following criteria:</p>
+<ul>
+  <li>The image must be greater than 800 pixels on the longest side</li>
+  <li>The image must be a JPEG</li>
+  <li>The image must contain the &quot;Powered by Auroras.live&quot; watermark</li>
+  <li>Your camera must be available at a set of reasonable hours. For weathercams, this could be dawn until dusk. For aurora cameras, dusk until dawn. High availability means a better end-user experience</li>
+</ul>
+<h2>Uploading your image</h2>
+<p>Using your method of choice (node.js and request + formdata work well), POST your image to</p>
+<pre>https://api.auroras.live/v1/integration/weathercam.php?key=yourapikeyhere</pre>
