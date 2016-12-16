@@ -1,0 +1,11 @@
+<h2>Dates and Timezones</h2>
+<p>By default all dates and times returned are UTC. You can adjust this by adding <code>&tz</code> to your request, along with an offset in minutes. If you're using Javascript, you can simply call <code>new Date().getTimezoneOffset()</code> to retrieve this
+</p>
+<h3>Example</h3>
+<p>
+    <code>http://api.auroras.live/v1/?type=ace&data=bz&tz={{ $root.timezone }}</code>
+</p>
+<h3>Returns</h3>
+<p>Returns the colour in the specified format</p>
+<a class="btn btn-info" href="" ng-click="$root.getResults('?type=ace&data=bz&tz=' + $root.timezone, 'tz')"><i class="fa fa-play"></i> See Example</a>
+<p><pre ng-show="$root.resultsData['tz']">{{ $root.resultsData['tz'] }}</pre></p>

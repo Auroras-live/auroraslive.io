@@ -1,0 +1,32 @@
+<h2>Formats (BETA)</h2>
+<p>By default, data will be returned as JSON. If you wish to return the data as XML, simply append <code>format=xml</code> to your request. <b>Note:</b> this won't work on all modules, as the generated fields contain illegal keys</p>
+<h2>Valid Values</h2>
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Value</th>
+            <th>Description</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>xml</code></td>
+            <td>Returns the colour as an XML string</td>
+            <td>This may not work with all modules, as some modules return keys that may not be valid XML nodes</td>
+        </tr>
+        <tr>
+            <td><code>jsonp</code></td>
+            <td>Returns the data as JSONP</td>
+            <td>By default, the callback function name is <code>aurorasLive</code>. To specify a custom callback, use <code>&callback=</code>. Custom callbacks can only contain <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> and <code>_</code></td>
+        </tr>
+    </tbody>
+</table>
+<h3>Example</h3>
+<p>
+    <code>http://api.auroras.live/v1/?type=ace&data=bz&format=xml</code>
+</p>
+<h3>Returns</h3>
+<p>Returns the colour in the specified format</p>
+<a class="btn btn-info" href="" ng-click="$root.getResults('?type=ace&data=bz&format=xml', 'formats', true)"><i class="fa fa-play"></i> See Example</a>
+<p><pre ng-show="$root.resultsData['formats']">{{ $root.resultsData['formats'] }}</pre></p>
