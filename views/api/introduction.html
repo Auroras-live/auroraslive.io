@@ -33,6 +33,12 @@
             <h1>Colours</h1>
         </div>
     </a>
+    <a href="" ng-click="section = 'caching'" class="nounderline">
+        <div class="col-md-2 large ng-class:{ 'large-active': section == 'caching' }">
+            <h1><i class="fa fa-history"></i></h1>
+            <h1>Caching</h1>
+        </div>
+    </a>
 </div>
 
 
@@ -41,6 +47,7 @@
 <div ng-show="section == 'timezones'" ng-include="'views/api/introduction/timezones.html'"></div>
 <div ng-show="section == 'formats'" ng-include="'views/api/introduction/formats.html'"></div>
 <div ng-show="section == 'colours'" ng-include="'views/api/introduction/colours.html'"></div>
+<div ng-show="section == 'caching'" ng-include="'views/api/introduction/caching.html'"></div>
 
 <hr />
 <div ng-include="'views/edit.html'"></div>
