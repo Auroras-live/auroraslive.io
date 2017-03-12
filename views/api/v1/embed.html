@@ -1,4 +1,4 @@
-<div ng-include="'views/api/nav.html'"></div>
+<div ng-include="'views/api/v1/nav.html'"></div>
 <h1>The Archive Module</h1>
 <p>The embed module returns an image containing various data, allowing the information to be embedded in a forum signature, website etc. You have the option of embedding current data, or embedding the current weather for a location.</p>
 <h3>Required Parameters</h3>
@@ -51,7 +51,7 @@
     <code>http://api.auroras.live/v1/?type=embed&image=current</code>
 </p>
 <h3>Returns</h3>
-<p>An image showing the current data (Bz, speed, density and Kp) for a given location. <a href="#/api/introduction"><code>tz</code> aware</a>, so you can display the image in your local time</p>
+<p>An image showing the current data (Bz, speed, density and Kp) for a given location. <a href="#/api/v1/introduction"><code>tz</code> aware</a>, so you can display the image in your local time</p>
 <a class="btn btn-info" href="" ng-click="$root.resultsData['embedcurrent'] = 'http://api.auroras.live/v1/?type=embed&image=current'"><i class="fa fa-play"></i> See Example</a>
 <p ng-show="$root.resultsData['embedcurrent']"><img src="{{ $root.resultsData['embedcurrent'] }}"></p>
 

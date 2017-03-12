@@ -12,49 +12,54 @@ angular.module("app.routes", [])
       templateUrl: "views/api/index.html",
       controller: "api"
     })
-    .when("/api/introduction", {
+    .when("/api/v1", {
+      title: "API",
+      templateUrl: "views/api/v1/index.html",
+      controller: "api"
+    })
+    .when("/api/v1/introduction", {
       title: "Introduction",
-      templateUrl: "views/api/introduction.html",
+      templateUrl: "views/api/v1/introduction.html",
       controller: "api"
     })
-    .when("/api/all", {
+    .when("/api/v1/all", {
       title: "All",
-      templateUrl: "views/api/all.html",
+      templateUrl: "views/api/v1/all.html",
       controller: "api"
     })
-    .when("/api/ace", {
+    .when("/api/v1/ace", {
       title: "ACE",
-      templateUrl: "views/api/ace.html",
+      templateUrl: "views/api/v1/ace.html",
       controller: "api"
     })
-    .when("/api/archive", {
+    .when("/api/v1/archive", {
       title: "Archives",
-      templateUrl: "views/api/archive.html",
+      templateUrl: "views/api/v1/archive.html",
       controller: "api"
     })
-    .when("/api/embed", {
+    .when("/api/v1/embed", {
       title: "Embed",
-      templateUrl: "views/api/embed.html",
+      templateUrl: "views/api/v1/embed.html",
       controller: "api"
     })
-    .when("/api/images", {
+    .when("/api/v1/images", {
       title: "Images",
-      templateUrl: "views/api/images.html",
+      templateUrl: "views/api/v1/images.html",
       controller: "api"
     })
-    .when("/api/locations", {
+    .when("/api/v1/locations", {
       title: "Locations",
-      templateUrl: "views/api/locations.html",
+      templateUrl: "views/api/v1/locations.html",
       controller: "api"
     })
-    .when("/api/weather", {
+    .when("/api/v1/weather", {
       title: "Weather",
-      templateUrl: "views/api/weather.html",
+      templateUrl: "views/api/v1/weather.html",
       controller: "api"
     })
-    .when("/api/usage", {
+    .when("/api/v1/usage", {
       title: "Usage",
-      templateUrl: "views/api/usage.html",
+      templateUrl: "views/api/v1/usage.html",
       controller: "api"
     })
     .when("/sensor", {
