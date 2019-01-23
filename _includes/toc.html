@@ -1,24 +1,22 @@
 <h3>Table of Contents</h3>
-<ul id="toc">
+<div id="toc">
   {% for nav in site.data.navigation %}
     {% for item in nav[1] %}
       {% unless item.children[0] %}
-        <li>
-          <a href="{{ item.url }}">{{ item.title }}</a>
-        </li>
+        <a href="{{ item.url }}">
+          <div class="toc-button">{{ item.title }}</div>
+        </a>
       {% endunless %}
       {% if item.children[0] %}
-        <li>
-          <a href="{{ item.url }}">{{ item.title }}</a>
-        </li>
-        <ul>
-          {% for child in item.children %}
-            <li>
-              <a href="{{ child.url }}">{{ child.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
+        <a href="{{ item.url }}">
+          <div class="toc-button">{{ item.title }}</div>
+        </a>
+        {% for child in item.children %}
+          <a href="{{ child.url }}">
+            <div class="toc-button toc-indent">{{ child.title }}</div>
+          </a>
+        {% endfor %}
       {% endif %}
     {% endfor %}
   {% endfor %}
- </ul>
+ </div>

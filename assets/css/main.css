@@ -59,6 +59,11 @@ a:visited {
   background: rgba(128, 128, 128, 1) !important;
 }
 
-#toc, #toc li {
-  list-style: none;
+.toc-button {
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+.toc-indent {
+  margin-left: 10px !important;
 }
