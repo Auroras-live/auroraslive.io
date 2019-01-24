@@ -44,11 +44,11 @@ body {
 }
 
 a:link {
-  color: white !important;
+  color: #DDDDDD !important;
 }
 
 a:visited {
-  color: #CCCCCC;
+  color: #BBBBBB;
 }
 
 .dropdown-menu {
@@ -66,4 +66,19 @@ a:visited {
 
 .toc-indent {
   margin-left: 10px !important;
+}
+
+pre, code {
+  background: rgba(255,255,255,0.1) !important;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 2px 4px;
+  font-size: 90%;
+  border-radius: 4px;
+}
+
+pre code {
+  background: none !important;
+  border: none;
+  padding: auto;
 }

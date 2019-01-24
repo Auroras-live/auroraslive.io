@@ -1,0 +1,103 @@
+<h2>{{ include.endpoint.name }}</h2>
+<p>{{ include.endpoint.description }}</p>
+<br /><br />
+<h3>Parameters</h3>
+<table class="table table-stripe table-hover table-small">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Required?</th>
+    <th>Default Value</th>
+    <th>Valid Values</th>
+  </tr>
+  {% for param in include.endpoint.parameters %}
+    <tr>
+      <td>
+        <code>{{ param.name }}</code>
+      </td>
+      <td>
+        {{ param.description | markdownify }}
+      </td>
+      <td>
+        <code>{{ param.type }}</code>
+      </td>
+      <td>
+        {% unless param.required == false %}
+          {{ param.required | markdownify }}
+        {% endunless %}
+      </td>
+      <td>
+        {% if param.default %}
+          <code>{{ param.default }}</code>
+        {% endif %}
+      </td>
+      <td>
+        {% if param.range %}
+          <code>{{ param.range[0] }}</code> to <code>{{ param.range[1] }}</code>
+        {% endif %}
+        {% if param.valid_values %}
+          {% for val in param.valid_values %}
+            <code>{{ val }}</code>{% if forloop.last == false %},{% endif %}
+          {% endfor %}
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+
+<br /><br />
+<h3>Returns</h3>
+<table class="table table-stripe table-hover">
+  <tr>
+    <th>Key</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Sample / Valid Value</th>
+    <th>Notes</th>
+  </tr>
+  {% for param in include.endpoint.returns %}
+    <tr>
+      <td>
+        <code>{{ param.key }}</code>
+      </td>
+      <td>
+        {{ param.description | markdownify }}
+      </td>
+      <td>
+        <code>{{ param.type }}</code>
+      </td>
+      <td>
+        {% if param.range %}
+          <code>{{ param.range[0] }}</code> to <code>{{ param.range[1] }}</code>
+        {% endif %}
+        {% if param.value %}
+          <code>{{ param.value }}</code>
+        {% endif %}
+        {% if param.valid_values %}
+          {% for val in param.valid_values %}
+            <code>{{ val }}</code>{% if forloop.last == false %},{% endif %}
+          {% endfor %}
+        {% endif %}
+      </td>
+      <td>
+        {% if param.notes %}
+          {{ param.notes | markdownify }}
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+
+{% if include.endpoint.demo %}
+  <br /><br />
+  <h3>Example Output</h3>
+  <pre>{{ include.endpoint.demo | jsonify | neat_jsond }}</pre>
+{% endif %}
+
+<br /><br />
+{% if include.endpoint.notes %}
+  <hr />
+  <h3>Notes</h3>
+  <p>{{ include.endpoint.notes | markdownify }}</p>
+{% endif %}

@@ -7,3 +7,5 @@ v2:
     children:
     - title: Overview
       url: /v2/overview.html
+    - title: Weather
+      url: /v2/weather.html

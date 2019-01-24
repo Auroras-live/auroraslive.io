@@ -3,3 +3,8 @@ layout: default
 ---
 
 <h1>Auroras.live Developer Documentation</h1>
+
+{{ site.data.v2api.test }}
+{% for key in site.data.v2api %}
+  {{ key[0] }}
+{% endfor %}

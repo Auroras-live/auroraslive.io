@@ -1,0 +1,141 @@
+{
+  "name": "Weather Module",
+  "endpoint": "/v2/weather",
+  "description": "Retrieves weather for any given location using one of three weather providers",
+  "notes": null,
+  "parameters": [{
+      "name": "weather.lat",
+      "required": "Yes",
+      "description": "Latitude for the location you wish to obtain weather for",
+      "type": "float",
+      "default": null,
+      "range": [-180, 180]
+    },
+    {
+      "name": "weather.long",
+      "required": "Yes",
+      "description": "Longitude for the location you wish to obtain weather for",
+      "type": "float",
+      "default": null,
+      "range": [-90, 90]
+    },
+    {
+      "name": "weather.provider",
+      "required": false,
+      "description": "Which weather provider to use",
+      "type": "string",
+      "default": "metno",
+      "valid_values": ["metno", "owm", "darksky"]
+    },
+    {
+      "name": "weather.apikey",
+      "required": "Yes if provider is `owm` or `darksky`",
+      "description": "The API key to use for the given weather provider, if the provider requires it",
+      "type": "string",
+      "default": null,
+      "valid_values": null
+    },
+    {
+      "name": "weather.forecast",
+      "required": false,
+      "description": "If true, returns a weather forecast instead of the current weather",
+      "type": "boolean",
+      "default": "false",
+      "valid_values": ["true", "false"]
+    }
+  ],
+  "returns": [{
+    "key": "type",
+    "description": "The type of weather data this is",
+    "type": "string",
+    "valid_values": ["current", "forecast"],
+    "notes": null,
+  }, {
+    "key": "temperature",
+    "description": "Temperature in C or F, depending on [Format Options](/v2/formats).",
+    "type": "string",
+    "value": "32",
+    "notes": null,
+  }, {
+    "key": "rain",
+    "description": "The amount of rain in inches or millimeters, depending on [Format Options](/v2/formats).",
+    "type": "integer",
+    "value": "1",
+    "notes": null,
+  }, {
+    "key": "cloud",
+    "description": "The amount of cloud cover as a percentage",
+    "type": "integer",
+    "value": "10",
+    "notes": null,
+  }, {
+    "key": "description",
+    "description": "A short description of the weather. Not used by `metno`",
+    "type": "string",
+    "value": "Cloudy",
+    "notes": null,
+  }, {
+    "key": "wind",
+    "description": "An array containing information about the wind",
+    "type": "array",
+    "value": null,
+    "notes": null,
+  }, {
+    "key": "wind.speed",
+    "description": "The winspeed in km/h or mph, depending on [Format Options](/v2/formats).",
+    "type": "integer",
+    "value": 10,
+    "notes": null,
+  }, {
+    "key": "wind.direction",
+    "description": "The direction of the wind as an integer",
+    "type": "integer",
+    "value": 45,
+    "notes": null,
+  }, {
+    "key": "wind.direction_text",
+    "description": "The wind direction as text",
+    "type": "string",
+    "valid_values": ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"],
+    "notes": null,
+  }, {
+    "key": "units",
+    "description": "An array containing unit-specific strings (e.g. 'km/h'or 'mph')",
+    "type": "array",
+    "value": null,
+    "notes": null,
+  }, {
+    "key": "units.temperature",
+    "description": "What unit of measurement this temperature is in",
+    "type": "string",
+    "valid_values": ["C", "F"],
+    "notes": null,
+  }, {
+    "key": "units.rain",
+    "description": "What unit of measurement this rainfall value is in",
+    "type": "string",
+    "valid_values": ["mm", "in"],
+    "notes": null,
+  }, {
+    "key": "units.wind",
+    "description": "What unit of measurement this windspeed is in",
+    "type": "string",
+    "valid_values": ["km/h", "mph"],
+    "notes": null,
+  }, {
+    "key": "icon",
+    "description": "A provider-specific icon",
+    "type": "string",
+    "value": "04e",
+    "notes": "Icon info: [owm](https://openweathermap.org/weather-conditions), [metno](https://api.met.no/weatherapi/weathericon/1.1/documentation), [darksky](https://darksky.net/dev/docs)",
+  }, {
+    "key": "id",
+    "description": "A provider-specific id. Usually a numeric representation of the current weather",
+    "type": "string",
+    "valid_values": null,
+    "notes": "This value will be the same as `icon` when using `darksky` as the provider",
+  }],
+  "demo": {
+    "blah": true
+  }
+}
