@@ -10,3 +10,6 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+  - neatjson
+
+api_url: "http://localhost:9001"

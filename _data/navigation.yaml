@@ -7,5 +7,9 @@ v2:
     children:
     - title: Overview
       url: /v2/overview.html
+    - title: Appended Fields
+      url: /v2/appends.html
+    - title: Format Options
+      url: /v2/formats.html
     - title: Weather
       url: /v2/weather.html

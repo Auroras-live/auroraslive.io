@@ -1,0 +1,45 @@
+---
+layout: default
+title: Overview
+---
+
+<h2>Auroras.live v2 API Overview</h2>
+
+<p>Version 2 of the Auroras.live API is completely re-written from the ground up to be faster and more flexible, with new data and features not found in the previous version.</p>
+
+<h3>Differences between versions</h3>
+
+<ul>
+  <li>The API is now accessed by POSTing a JSON payload to the desired endpoint</li>
+  <ul>
+    <li>Though some data can still be accessed via GET and traditional POST methods</li>
+  </ul>
+  <li>Data is now broken up into individual modules. For example <code>bz</code> is no longer grouped under the <code>ace</code> module</li>
+  <li>Timezone offset can now be either a number (e.g. <code>-600</code>) or a timezone name (e.g. <code>Australia/Melbourne</code>)
+</ul>
+
+<h3>Making an API call</h3>
+<p>To make an API call, send a POST request with a JSON body to <code>{{ site.api_url }}/v2</code>. This JSON body should have a key that corresponds to the module you wish to call, and the value of the key should be the parameters for that module:</p>
+
+<pre>
+  {
+    "weather": {
+      "lat": -12,
+      "long": 34,
+    }
+  }
+</pre>
+
+<h3>About Dot Notation</h3>
+
+<p>This documentation makes use of "dot notation", which, unless stated otherwise, denotes a property of the JSON object. For example <code>alerts.children</code> would be equal to:</p>
+
+<pre>
+  {
+    "alerts": {
+      "children": ...
+    }
+  }
+</pre>
+
+<p>This also applies to GET requests, so the same <code>alerts.children</code> would be equal to <code>{{ site.api_url }}/v2/alerts?alerts[children]=...</code></p>

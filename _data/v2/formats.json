@@ -1,0 +1,71 @@
+{
+  "name": "Format Options",
+  "url": null,
+  "description": "These options are used to modify returned data. Because these options are global, they appear OUTSIDE of any modules. See the example below",
+  "notes": null,
+  "parameters": [{
+    "name": "format.date.tz",
+    "required": null,
+    "description": "Modifies most timestamps to convert from UTC into another timezone",
+    "type": ["float", "string"],
+    "default": null,
+    "valid_values": [-600, "Australia/Melbourne"]
+  }, {
+    "name": "format.date.format",
+    "required": null,
+    "description": "Modifies how dates are turned. Uses [PHP's Date formatting](http://php.net/date)",
+    "type": ["string"],
+    "default": "c",
+    "value": "Y-m-d H:i:sa"
+  }, {
+    "name": "format.colour.format",
+    "required": null,
+    "description": "Changes how colours are returned. **Note the use of the British English spelling of colour (with a 'U')**",
+    "type": ["string"],
+    "default": "name",
+    "valid_values": ["name", "hex"]
+  }, {
+    "name": "format.units",
+    "required": null,
+    "description": "Changes how things such as speed, distance etc. are returned",
+    "type": ["string"],
+    "default": "metric",
+    "valid_values": ["metric", "imperial"]
+  }],
+  "demo": {
+    "input": {
+      "format": {
+        "units": "imperial",
+        "date": {
+          "format": "l jS F, h:i:sa"
+        }
+      },
+      "weather": {
+        "lat": 40.7128,
+        "long": -74.0060
+      }
+    },
+    "output": {
+      "provider": "metno",
+      "type": "current",
+      "date": "Thursday 24th January, 01:00:00pm",
+      "request_date": "Thursday 24th January, 12:46:14pm",
+      "temperature": 51.980000000000004,
+      "rain": 0,
+      "cloud": 100,
+      "description": null,
+      "wind": {
+        "speed": 6.1515748031496065,
+        "direction": "184.2",
+        "direction_text": "S"
+      },
+      "units": {
+        "temperature": "F",
+        "rain": "in",
+        "wind": "mph"
+      },
+      "icon": null,
+      "id": null
+    }
+  }
+}
