@@ -1,0 +1,58 @@
+{
+  "name": "Image Module",
+  "url": "/v2/images",
+  "description": "Retrieves a list of images. These are images such as magnetometers, satellites, skycams etc.. Auroras.live caches these images to reduce loading times",
+  "notes": null,
+  "parameters": [{
+    "key": "images.categories",
+    "required": null,
+    "description": "Which category of images you want",
+    "type": ["array"],
+    "default": null,
+    "values": ["cam", "satellite", "weather", "chart", "magnetometer"]
+  }],
+  "returns": [{
+      "key": "image_id",
+      "description": "The image ID",
+      "type": ["string"],
+      "values": "goes-magnetomete",
+      "notes": null,
+    }, {
+      "key": "description",
+      "description": "A description of the image",
+      "type": ["string"],
+      "values": null,
+      "notes": null,
+    },
+    {
+      "key": "categories",
+      "description": "The categories that this image belongs to",
+      "type": ["array"],
+      "values": "[\"satellite\", \"weather\"]",
+      "notes": null,
+    }, {
+      "key": "url",
+      "description": "The Auroras.live URL of this image",
+      "type": ["string"],
+      "values": "https://api.auroras.live/storage/images/goes-magnetometer.gif",
+      "notes": "As some images are slow to load from external sources, Auroras.live caches them at this URL",
+    }
+  ],
+  "demo": [{
+    "name": "Get image list",
+    "description": "Gets all the images the API has cached",
+    "input": {
+      "images": {}
+    },
+    "output": [{
+      "image_id": "aceepam3",
+      "description": "Three day EPAM chart",
+      "categories": [
+        "chart"
+      ],
+      "url": "http://localhost:9001/storage/images/aceepam3.gif",
+      "date": "2019-01-20T05:35:17+00:00",
+      "request_date": "2019-01-27T12:34:16+00:00"
+    }]
+  }]
+}

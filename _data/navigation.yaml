@@ -15,3 +15,5 @@ v2:
       url: /v2/weather.html
     - title: Alerts
       url: /v2/alerts.html
+    - title: Images
+      url: /v2/images.html
