@@ -1,0 +1,33 @@
+{
+  "name": "Kp (27 Day)",
+  "url": "/v2/kp/27day",
+  "description": "27 day Kp forecast",
+  "notes": null,
+  "returns": [{
+    "key": "value",
+    "description": "The Kp reading for the given `date`",
+    "type": ["integer"],
+    "range": [0, 9],
+    "notes": null,
+  }],
+  "demo": [{
+    "name": "Get 27 Day Kp Forecast",
+    "description": "Retrieves the 27 day Kp forecast. Note how `27day` is NOT a property of `kp`. The key is literally `kp.27day`. Example data is truncated",
+    "input": {
+      "kp.27day": {}
+    },
+    "output": [{
+        "value": 2,
+        "colour": "green",
+        "date": "2019-01-14T00:00:00+00:00",
+        "request_date": "2019-01-28T12:25:10+00:00"
+      },
+      {
+        "value": 3,
+        "colour": "green",
+        "date": "2019-01-15T00:00:00+00:00",
+        "request_date": "2019-01-28T12:25:10+00:00"
+      }
+    ],
+  }]
+}

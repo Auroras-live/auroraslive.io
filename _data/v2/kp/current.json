@@ -1,0 +1,26 @@
+{
+  "name": "Kp (Current)",
+  "url": "/v2/kp/current",
+  "description": "Current Kp reading",
+  "notes": "**This data is exactly the same as `kp.minute`, but only returns the latest value. `kp.current` is offered for convenience**.\nWhen calling this module from the top-level endpoing (`/v2`), the key is literally `kp.minute`. It is NOT an array (e.g. `{ \"kp\": { \"minute\": {} } }`)",
+  "returns": [{
+    "key": "value",
+    "description": "The Kp reading for the given `date`",
+    "type": ["integer"],
+    "range": [0, 9],
+    "notes": null,
+  }],
+  "demo": [{
+    "name": "Get Current Kp Reading",
+    "description": "Gets the current Kp reading. Note how `current` is NOT a property of `kp`. The key is literally `kp.current`",
+    "input": {
+      "kp.current": {}
+    },
+    "output": {
+      "value": 0,
+      "colour": "green",
+      "date": "2019-01-28T12:25:00+00:00",
+      "request_date": "2019-01-28T12:30:58+00:00"
+    },
+  }]
+}

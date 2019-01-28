@@ -3,7 +3,7 @@ Home:
     url: /
 v2:
   - title: v2
-    url: /v2
+    url: /v2/overview.html
     children:
     - title: Overview
       url: /v2/overview.html
@@ -11,19 +11,30 @@ v2:
       url: /v2/appends.html
     - title: Format Options
       url: /v2/formats.html
-    - title: Weather
-      url: /v2/weather.html
     - title: Alerts
       url: /v2/alerts.html
-    - title: Images
-      url: /v2/images.html
     - title: Bt
       url: /v2/bt.html
     - title: Bz
       url: /v2/bz.html
-    - title: Speed
-      url: /v2/speed.html
     - title: Density
       url: /v2/density.html
+    - title: Images
+      url: /v2/images.html
+    - title: Kp
+      url: /v2/kp/minute.html
+      children:
+      - title: Minute
+        url: /v2/kp/minute.html
+      - title: 3 Day
+        url: /v2/kp/3day.html
+      - title: 27 Day
+        url: /v2/kp/27day.html
+      - title: Current
+        url: /v2/kp/current.html  
     - title: Nowcast
       url: /v2/nowcast.html
+    - title: Weather
+      url: /v2/weather.html
+    - title: Speed
+      url: /v2/speed.html

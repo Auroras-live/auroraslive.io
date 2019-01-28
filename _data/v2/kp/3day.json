@@ -1,0 +1,169 @@
+{
+  "name": "Kp (3 Day)",
+  "url": "/v2/kp/3day",
+  "description": "3 day Kp forecast, broken down in 3 days, and 3 hour increments within those 3 days.\n\nPlease see the example below for more information ",
+  "notes": "In the example shown, `kp.minute[0]` is Monday, `kp.minute[1]` is Tuesday, and `kp.minute[3]` is Wednesday, with `kp.minute[0][0]` being `00:00` to `03:00`, `kp.minute[0][1]` being `03:00` to `06:00`, and so on",
+  "returns": [{
+    "key": "value",
+    "description": "The Kp reading for the given `date`",
+    "type": ["integer"],
+    "range": [0, 9],
+    "notes": null,
+  }],
+  "demo": [{
+    "name": "Get Kp Minute Data",
+    "description": "Gets the 3-day Kp forecast. The resulting data will be a 3-element array (one element for each day), and each element will contain 8 elements (one for each 3-hour block in that day). Note how `3day` is NOT a property of `kp`. The key is literally `kp.3day`",
+    "input": {
+      "kp.3day": {}
+    },
+    "output": [
+      [{
+          "value": 2,
+          "colour": "green",
+          "date": "2019-01-28T00:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 2,
+          "colour": "green",
+          "date": "2019-01-28T03:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 2,
+          "colour": "green",
+          "date": "2019-01-28T06:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 1,
+          "colour": "green",
+          "date": "2019-01-28T09:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 1,
+          "colour": "green",
+          "date": "2019-01-28T12:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 1,
+          "colour": "green",
+          "date": "2019-01-28T15:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 1,
+          "colour": "green",
+          "date": "2019-01-28T18:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 1,
+          "colour": "green",
+          "date": "2019-01-28T21:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        }
+      ],
+      [{
+          "value": 2,
+          "colour": "green",
+          "date": "2019-01-29T00:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 1,
+          "colour": "green",
+          "date": "2019-01-29T03:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 1,
+          "colour": "green",
+          "date": "2019-01-29T06:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 1,
+          "colour": "green",
+          "date": "2019-01-29T09:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 1,
+          "colour": "green",
+          "date": "2019-01-29T12:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 2,
+          "colour": "green",
+          "date": "2019-01-29T15:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 1,
+          "colour": "green",
+          "date": "2019-01-29T18:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 2,
+          "colour": "green",
+          "date": "2019-01-29T21:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        }
+      ],
+      [{
+          "value": 2,
+          "colour": "green",
+          "date": "2019-01-30T00:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 1,
+          "colour": "green",
+          "date": "2019-01-30T03:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 1,
+          "colour": "green",
+          "date": "2019-01-30T06:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 2,
+          "colour": "green",
+          "date": "2019-01-30T09:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 1,
+          "colour": "green",
+          "date": "2019-01-30T12:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 1,
+          "colour": "green",
+          "date": "2019-01-30T15:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 1,
+          "colour": "green",
+          "date": "2019-01-30T18:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        },
+        {
+          "value": 2,
+          "colour": "green",
+          "date": "2019-01-30T21:00:00+00:00",
+          "request_date": "2019-01-28T12:19:55+00:00"
+        }
+      ]
+    ],
+  }]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Kp (Minute)",
+  "url": "/v2/kp/minute",
+  "description": "Minute-by-minute Kp history for the last 6 hours",
+  "notes": "When calling this module from the top-level endpoing (`/v2`), the key is literally `kp.minute`. It is NOT an array (e.g. `{ \"kp\": { \"minute\": {} } }`)",
+  "returns": [{
+    "key": "value",
+    "description": "The Kp reading for the given `date`",
+    "type": ["integer"],
+    "range": [0, 9],
+    "notes": null,
+  }],
+  "demo": [{
+    "name": "Get Kp Minute Data",
+    "description": "Gets all Kp readings for the last 6 hours. Note how `minute` is NOT a property of `kp`. The key is literally `kp.minute`",
+    "input": {
+      "kp.minute": {}
+    },
+    "output": [{
+        "value": 2.667,
+        "colour": "green",
+        "date": "2019-01-19T23:33:00+00:00",
+        "request_date": "2019-01-28T11:22:15+00:00"
+      },
+      {
+        "value": 2.667,
+        "colour": "green",
+        "date": "2019-01-19T23:34:00+00:00",
+        "request_date": "2019-01-28T11:22:15+00:00"
+      }
+    ],
+  }]
+}
