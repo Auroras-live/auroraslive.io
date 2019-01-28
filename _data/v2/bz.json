@@ -1,0 +1,23 @@
+{
+  "name": "Bz",
+  "url": "/v2/bz",
+  "description": "Direction of the magnetic field",
+  "notes": null,
+  "returns": [{
+    "key": "value",
+    "description": "The current Bz",
+    "type": ["integer"],
+    "range": [20, -20],
+    "notes": null,
+  }],
+  "demo": [{
+    "name": "Get Bz value",
+    "description": null,
+    "output": {
+      "value": 0,
+      "colour": "green",
+      "date": "2019-01-27T13:54:00+00:00",
+      "request_date": "2019-01-27T13:58:08+00:00"
+    }
+  }]
+}

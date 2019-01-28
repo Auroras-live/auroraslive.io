@@ -17,3 +17,7 @@ v2:
       url: /v2/alerts.html
     - title: Images
       url: /v2/images.html
+    - title: Bt
+      url: /v2/bt.html
+    - title: Bz
+      url: /v2/bz.html
