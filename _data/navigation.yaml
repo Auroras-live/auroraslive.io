@@ -25,3 +25,5 @@ v2:
       url: /v2/speed.html
     - title: Density
       url: /v2/density.html
+    - title: Nowcast
+      url: /v2/nowcast.html

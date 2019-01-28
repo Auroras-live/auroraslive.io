@@ -1,0 +1,93 @@
+{
+  "name": "Nowcast Module",
+  "url": "/v2/nowcast",
+  "description": "Gets the probability of seeing an aurora in a given location",
+  "notes": "**If `date` is null, then there is no probability data for that location**",
+  "parameters": [{
+      "key": "nowcast.lat",
+      "required": "Yes",
+      "description": "Latitude for the location you wish to obtain the probability for",
+      "type": ["float"],
+      "default": null,
+      "range": [-180, 180]
+    },
+    {
+      "key": "nowcast.long",
+      "required": "Yes",
+      "description": "Longitude for the location you wish to obtain the probability for",
+      "type": ["float"],
+      "default": null,
+      "range": [-90, 90]
+    }, {
+      "key": "nowcast.distance",
+      "required": null,
+      "description": "If set, will get the highest probability for the given area *plus* this distance. If [Format Options](/v2/formats) are set to imperial, give the distance as miles. Otherwise, give the distance as kilometers",
+      "type": ["integer"],
+      "default": 1000,
+      "range": [0, 10000]
+    }
+  ],
+  "returns": [{
+      "key": "value",
+      "description": "The chance you have, as a percentage, of seeing an aurora directly overhead",
+      "type": ["integer"],
+      "values": 3,
+      "notes": null,
+    }, {
+      "key": "lat",
+      "description": "The latitude of the value",
+      "type": ["float"],
+      "values": 64.8315839,
+      "notes": null,
+    }, {
+      "key": "long",
+      "description": "The longitude of the value",
+      "type": ["float"],
+      "values": -147.7617042,
+      "notes": null,
+    },
+    {
+      "key": "distance",
+      "description": "The distance from the location you provided. If [Format Options](/v2/formats) are set to imperial, this will be in miles. Otherwise, it'll be set to kilometers",
+      "type": ["integer"],
+      "range": [0, 10000],
+      "notes": null,
+    }
+  ],
+  "demo": [{
+    "name": "Get probability for Fairbanks, Alaska",
+    "description": "This will also search within a 1000km radius of the specified location",
+    "input": {
+      "nowcast": {
+        "lat": 64.8315839,
+        "long": -147.7617042
+      }
+    },
+    "output": {
+      "lat": 61.875,
+      "long": -129.375,
+      "value": 30,
+      "distance": 970,
+      "colour": "yellow",
+      "date": "2019-01-24T09:46:31+00:00",
+      "request_date": "2019-01-28T04:36:50+00:00"
+    }
+  }, {
+    "name": "Get the probability for 0, 0",
+    "description": "This will have no value available, so `distance` and `date` will be null",
+    "input": {
+      "nowcast": {
+        "lat": 0,
+        "long": 0
+      }
+    },
+    "output": {
+      "value": 0,
+      "lat": 0,
+      "long": 0,
+      "colour": "green",
+      "date": null,
+      "request_date": "2019-01-28T04:38:11+00:00"
+    }
+  }]
+}
