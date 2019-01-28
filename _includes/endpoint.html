@@ -1,5 +1,5 @@
 <h2>{{ include.endpoint.name }}</h2>
-<p>{{ include.endpoint.description }}</p>
+<p>{{ include.endpoint.description | markdownify }}</p>
 
 {% if include.endpoint.url %}
   <code>{{ site.api_url }}/{{ include.endpoint.url }}</code>
@@ -114,8 +114,8 @@
     {% if demo.name %}
       <h3>{{ demo.name }}</h3>
     {% endif %}
-    {% if demo.description | markdownify %}
-      <p>{{ demo.description }}</p>
+    {% if demo.description %}
+      <p>{{ demo.description | markdownify }}</p>
     {% endif %}
     {% if demo.input %}
       <h4>Example Input</h4>
