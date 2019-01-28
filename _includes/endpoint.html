@@ -20,7 +20,7 @@
     {% for param in include.endpoint.parameters %}
       <tr>
         <td>
-          <code>{{ param.name }}</code>
+          <code>{{ param.key }}</code>
         </td>
         <td>
           {{ param.description | markdownify }}
@@ -45,14 +45,16 @@
         <td>
           {% if param.range %}
             <code>{{ param.range[0] }}</code> to <code>{{ param.range[1] }}</code>
-          {% endif %}
-          {% if param.value %}
-            <code>{{ param.value }}</code>
-          {% endif %}
-          {% if param.valid_values %}
-            {% for val in param.valid_values %}
-              <code>{{ val }}</code>{% if forloop.last == false %},{% endif %}
+          {% elsif param.values[0] %}
+            {% for val in param.values %}
+              {% if val == "" %}
+                etc.
+              {% else %}
+                <code>{{ val }}</code>{% if forloop.last == false %},{% endif %}
+              {% endif %}
             {% endfor %}
+          {% elsif param.values %}
+            <code>{{ param.values }}</code>
           {% endif %}
         </td>
       </tr>
@@ -85,14 +87,16 @@
         <td>
           {% if param.range %}
             <code>{{ param.range[0] }}</code> to <code>{{ param.range[1] }}</code>
-          {% endif %}
-          {% if param.value %}
-            <code>{{ param.value }}</code>
-          {% endif %}
-          {% if param.valid_values %}
-            {% for val in param.valid_values %}
-              <code>{{ val }}</code>{% if forloop.last == false %},{% endif %}
+          {% elsif param.values[0] %}
+            {% for val in param.values %}
+              {% if val == null %}
+                etc.
+              {% else %}
+                <code>{{ val }}</code>{% if forloop.last == false %},{% endif %}
+              {% endif %}
             {% endfor %}
+          {% elsif param.values %}
+            <code>{{ param.values }}</code>
           {% endif %}
         </td>
         <td>
@@ -106,19 +110,27 @@
 {% endif %}
 
 {% if include.endpoint.demo %}
-  <br /><br />
-  {% if include.endpoint.demo.input %}
-    <h3>Example Input</h3>
-    {% highlight json %}
-{{ include.endpoint.demo.input | neat_json }}
-{% endhighlight %}
-{% endif %}
-  {% if include.endpoint.demo.output %}
-    <h3>Example Output</h3>
-{% highlight json %}
-{{ include.endpoint.demo.output | neat_json }}
-{% endhighlight %}
-  {% endif %}
+  {% for demo in include.endpoint.demo %}
+    {% if demo.name %}
+      <h3>{{ demo.name }}</h3>
+    {% endif %}
+    {% if demo.description | markdownify %}
+      <p>{{ demo.description }}</p>
+    {% endif %}
+    {% if demo.input %}
+      <h4>Example Input</h4>
+      {% highlight json %}
+{{ demo.input | neat_json }}
+      {% endhighlight %}
+    {% endif %}
+    {% if demo.output %}
+      <h4>Example Output</h4>
+      {% highlight json %}
+{{ demo.output | neat_json }}
+      {% endhighlight %}
+    {% endif %}
+    <br /><br />
+  {% endfor %}
 {% endif %}
 
 {% if include.endpoint.notes %}
