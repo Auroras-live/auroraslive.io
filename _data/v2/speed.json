@@ -1,0 +1,32 @@
+{
+  "name": "Speed",
+  "url": "/v2/speed",
+  "description": "The speed of the solar wind",
+  "notes": null,
+  "returns": [{
+      "key": "value",
+      "description": "The current speed",
+      "type": ["integer"],
+      "range": [0, 1000],
+      "notes": null,
+    },
+    {
+      "key": "minutes_to_earth",
+      "description": "An approximation of how quickly this solar wind will reach earth, based on the distance between DISCOVR and earth",
+      "type": ["integer"],
+      "values": 72,
+      "notes": null,
+    }
+  ],
+  "demo": [{
+    "name": "Get Speed value",
+    "description": null,
+    "output": {
+      "value": 343,
+      "colour": "green",
+      "date": "2019-01-20T05:32:00+00:00",
+      "request_date": "2019-01-27T14:03:21+00:00",
+      "minutes_to_earth": 72
+    }
+  }]
+}

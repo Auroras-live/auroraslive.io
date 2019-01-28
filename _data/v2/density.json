@@ -1,0 +1,23 @@
+{
+  "name": "Density",
+  "url": "/v2/density",
+  "description": "The density of the solar wind",
+  "notes": null,
+  "returns": [{
+    "key": "value",
+    "description": "The current density of the solar wind",
+    "type": ["integer"],
+    "range": [0, 20],
+    "notes": null,
+  }],
+  "demo": [{
+    "name": "Get Density value",
+    "description": null,
+    "output": {
+      "value": 3,
+      "colour": "green",
+      "date": "2019-01-20T05:32:00+00:00",
+      "request_date": "2019-01-28T00:55:53+00:00"
+    }
+  }]
+}

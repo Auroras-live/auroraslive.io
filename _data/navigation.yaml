@@ -21,3 +21,7 @@ v2:
       url: /v2/bt.html
     - title: Bz
       url: /v2/bz.html
+    - title: Speed
+      url: /v2/speed.html
+    - title: Density
+      url: /v2/density.html
