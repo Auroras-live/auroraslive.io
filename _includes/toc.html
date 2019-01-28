@@ -12,9 +12,21 @@
           <div class="toc-button">{{ item.title }}</div>
         </a>
         {% for child in item.children %}
-          <a href="{{ child.url }}">
-            <div class="toc-button toc-indent">{{ child.title }}</div>
-          </a>
+          {% unless child.children[0] %}
+            <a href="{{ child.url }}">
+              <div class="toc-button toc-indent">{{ child.title }}</div>
+            </a>
+          {% endunless %}
+          {% if child.children[0] %}
+            <a href="{{ child.url }}">
+              <div class="toc-button toc-indent">{{ child.title }}</div>
+            </a>
+            {% for subchild in child.children %}
+              <a href="{{ subchild.url }}">
+                <div class="toc-button toc-indent-2">{{ subchild.title }}</div>
+              </a>
+            {% endfor %}
+          {% endif %}
         {% endfor %}
       {% endif %}
     {% endfor %}

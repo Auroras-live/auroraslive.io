@@ -68,6 +68,10 @@ a:visited {
   margin-left: 10px !important;
 }
 
+.toc-indent-2 {
+  margin-left: 20px !important;
+}
+
 pre, code {
   background: rgba(255,255,255,0.1) !important;
   color: white;
