@@ -4,35 +4,37 @@
   "description": "These options are used to modify returned data. Because these options are global, they appear OUTSIDE of any modules. See the example below",
   "notes": null,
   "parameters": [{
-    "name": "format.date.tz",
+    "key": "format.date.tz",
     "required": null,
     "description": "Modifies most timestamps to convert from UTC into another timezone",
     "type": ["float", "string"],
     "default": null,
-    "valid_values": [-600, "Australia/Melbourne"]
+    "values": [-600, "Australia/Melbourne"]
   }, {
-    "name": "format.date.format",
+    "key": "format.date.format",
     "required": null,
     "description": "Modifies how dates are turned. Uses [PHP's Date formatting](http://php.net/date)",
     "type": ["string"],
     "default": "c",
-    "value": "Y-m-d H:i:sa"
+    "values": "Y-m-d H:i:sa"
   }, {
-    "name": "format.colour.format",
+    "key": "format.colour.format",
     "required": null,
     "description": "Changes how colours are returned. **Note the use of the British English spelling of colour (with a 'U')**",
     "type": ["string"],
     "default": "name",
-    "valid_values": ["name", "hex"]
+    "values": ["name", "hex"]
   }, {
-    "name": "format.units",
+    "key": "format.units",
     "required": null,
     "description": "Changes how things such as speed, distance etc. are returned",
     "type": ["string"],
     "default": "metric",
-    "valid_values": ["metric", "imperial"]
+    "values": ["metric", "imperial"]
   }],
-  "demo": {
+  "demo": [{
+    "name": "Change units and date",
+    "description": "Changes units of measurement to imperial, and sets a custom date format",
     "input": {
       "format": {
         "units": "imperial",
@@ -67,5 +69,5 @@
       "icon": null,
       "id": null
     }
-  }
+  }]
 }
