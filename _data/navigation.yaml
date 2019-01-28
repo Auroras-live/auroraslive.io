@@ -13,3 +13,5 @@ v2:
       url: /v2/formats.html
     - title: Weather
       url: /v2/weather.html
+    - title: Alerts
+      url: /v2/alerts.html

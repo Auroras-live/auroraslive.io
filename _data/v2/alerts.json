@@ -1,0 +1,151 @@
+{
+  "name": "Alerts Module",
+  "url": "/v2/alerts",
+  "description": "Retrieves space weather alerts, watches and warnings",
+  "notes": null,
+  "parameters": [{
+    "key": "alerts.product_ids",
+    "required": null,
+    "description": "Which product ID you wish to retrieve. IF not set, defaults to all",
+    "type": ["array"],
+    "default": null,
+    "values": "[\"K04W\"]"
+  }, {
+    "key": "alerts.children",
+    "required": null,
+    "description": "If true, any **previous** related alerts will be nested within this item",
+    "type": ["boolean"],
+    "default": "false",
+    "values": ["true", "false"]
+  }, {
+    "key": "alerts.parents",
+    "required": null,
+    "description": "If true, any **future** related alerts will be nested within this item",
+    "type": ["boolean"],
+    "default": "false",
+    "values": ["true", "false"]
+  }],
+  "returns": [{
+    "key": "product_id",
+    "description": "The product ID",
+    "type": ["string"],
+    "values": "EF3A",
+    "notes": null,
+  }, {
+    "key": "serial",
+    "description": "The serial number of this alert",
+    "type": ["integer"],
+    "values": 3584,
+    "notes": null,
+  }, {
+    "key": "parent_serial",
+    "description": "If this alert is a continuation of a previous alert, `parent_serial` will be the serial of the previous alert",
+    "type": ["integer"],
+    "values": 2889,
+    "notes": null,
+  }, {
+    "key": "message",
+    "description": "The alert message",
+    "type": ["integer"],
+    "values": 2889,
+    "notes": "The timezone and format of dates can be changed using [Format Options](/v2/formats)",
+  }, {
+    "key": "expires_at",
+    "description": "When this alert will expire. Not all alerts have an expiration, so this may be null",
+    "type": ["date"],
+    "values": "2019-01-05 09:00:00",
+    "notes": null,
+  }, {
+    "key": "children",
+    "description": "If `alerts.children` is `true`, contains related alerts, starting with the latest update, and going backwards",
+    "type": ["array"],
+    "values": null,
+    "notes": null,
+  }, {
+    "key": "parents",
+    "description": "If `alerts.parents` is `true`, contains related alerts, starting with the first alert, and going forwards until no more continuations are found",
+    "type": ["array"],
+    "values": null,
+    "notes": null,
+  }],
+  "demo": [{
+    "name": "Get specific product alert",
+    "description": "Demo output has been truncated for brevity",
+    "input": {
+      "alerts": {
+        "product_ids": ["K04W"]
+      }
+    },
+    "output": [{
+      "product_id": "K04W",
+      "serial": 3584,
+      "parent_serial": null,
+      "message": "Space Weather Message Code: WARK04\r\nSerial Number: 3584\r\nIssue Time: 2019-01-25T11:58:00+00:00\r\n\r\nEXTENDED WARNING: Geomagnetic K-index of 4 expected\r\nExtension to Serial Number: 3583\r\nValid From: 2019-01-23T23:25:00+00:00\r\nNow Valid Until: 2019-01-25T18:00:00+00:00\r\nWarning Condition: Persistence\r\n\r\nNOAA Space Weather Scale descriptions can be found at\r\nwww.swpc.noaa.gov/noaa-scales-explanation\r\n\r\nPotential Impacts: Area of impact primarily poleward of 65 degrees Geomagnetic Latitude.\r\nInduced Currents - Weak power grid fluctuations can occur.\r\nAurora - Aurora may be visible at high latitudes such as Canada and Alaska.",
+      "expires_at": null,
+      "date": "2019-01-25T11:58:06+00:00",
+      "request_date": "2019-01-27T05:50:35+00:00"
+    }, {
+      "product_id": "K04W",
+      "serial": 3583,
+      "parent_serial": null,
+      "message": "Space Weather Message Code: WARK04\r\nSerial Number: 3583\r\nIssue Time: 2019-01-24T22:47:00+00:00\r\n\r\nEXTENDED WARNING: Geomagnetic K-index of 4 expected\r\nExtension to Serial Number: 3582\r\nValid From: 2019-01-23T23:25:00+00:00\r\nNow Valid Until: 2019-01-25T12:00:00+00:00\r\nWarning Condition: Persistence\r\n\r\nNOAA Space Weather Scale descriptions can be found at\r\nwww.swpc.noaa.gov/noaa-scales-explanation\r\n\r\nPotential Impacts: Area of impact primarily poleward of 65 degrees Geomagnetic Latitude.\r\nInduced Currents - Weak power grid fluctuations can occur.\r\nAurora - Aurora may be visible at high latitudes such as Canada and Alaska.",
+      "expires_at": null,
+      "date": "2019-01-24T22:47:03+00:00",
+      "request_date": "2019-01-27T05:50:35+00:00"
+    }]
+  }, {
+    "name": "Get child alerts",
+    "description": "Gets alerts with nested child alerts. Demo output has been truncated",
+    "input": {
+      "alerts": {
+        "children": true
+      }
+    },
+    "output": [{
+      "product_id": "EF3A",
+      "serial": 2895,
+      "parent_serial": 2894,
+      "message": "Space Weather Message Code: ALTEF3\r\nSerial Number: 2895\r\nIssue Time: 2019-01-26T14:56:00+00:00\r\n\r\nCONTINUED ALERT: Electron 2MeV Integral Flux exceeded 1000pfu\r\nContinuation of Serial Number: 2894\r\nBegin Time: 2019-01-25T17:30:00+00:00\r\nYesterday Maximum 2MeV Flux: 1408 pfu\r\n\r\nNOAA Space Weather Scale descriptions can be found at\r\nwww.swpc.noaa.gov/noaa-scales-explanation\r\n\r\nPotential Impacts: Satellite systems may experience significant charging resulting in increased risk to satellite systems.",
+      "expires_at": null,
+      "date": "2019-01-26T14:56:23+00:00",
+      "request_date": "2019-01-27T06:27:03+00:00",
+      "children": [{
+        "product_id": "EF3A",
+        "serial": 2894,
+        "parent_serial": null,
+        "message": "Space Weather Message Code: ALTEF3\r\nSerial Number: 2894\r\nIssue Time: 2019-01-25T17:41:00+00:00\r\n\r\nALERT: Electron 2MeV Integral Flux exceeded 1000pfu\r\nThreshold Reached: 2019-01-25T17:30:00+00:00\r\nStation: GOES15\r\n \r\n\r\nNOAA Space Weather Scale descriptions can be found at\r\nwww.swpc.noaa.gov/noaa-scales-explanation\r\n\r\nPotential Impacts: Satellite systems may experience significant charging resulting in increased risk to satellite systems.",
+        "expires_at": null,
+        "date": "2019-01-25T17:41:51+00:00",
+        "request_date": "2019-01-27T06:27:03+00:00",
+        "children": []
+      }]
+    }]
+  }, {
+    "name": "Get parent alerts",
+    "description": "Gets alerts with nested parent alerts. Demo output has been truncated",
+    "input": {
+      "alerts": {
+        "parents": true
+      }
+    },
+    "output": [{
+      "product_id": "EF3A",
+      "serial": 2894,
+      "parent_serial": null,
+      "message": "Space Weather Message Code: ALTEF3\r\nSerial Number: 2894\r\nIssue Time: 2019-01-25T17:41:00+00:00\r\n\r\nALERT: Electron 2MeV Integral Flux exceeded 1000pfu\r\nThreshold Reached: 2019-01-25T17:30:00+00:00\r\nStation: GOES15\r\n \r\n\r\nNOAA Space Weather Scale descriptions can be found at\r\nwww.swpc.noaa.gov/noaa-scales-explanation\r\n\r\nPotential Impacts: Satellite systems may experience significant charging resulting in increased risk to satellite systems.",
+      "expires_at": null,
+      "date": "2019-01-25T17:41:51+00:00",
+      "request_date": "2019-01-27T06:34:40+00:00",
+      "parents": [{
+        "product_id": "EF3A",
+        "serial": 2895,
+        "parent_serial": 2894,
+        "message": "Space Weather Message Code: ALTEF3\r\nSerial Number: 2895\r\nIssue Time: 2019-01-26T14:56:00+00:00\r\n\r\nCONTINUED ALERT: Electron 2MeV Integral Flux exceeded 1000pfu\r\nContinuation of Serial Number: 2894\r\nBegin Time: 2019-01-25T17:30:00+00:00\r\nYesterday Maximum 2MeV Flux: 1408 pfu\r\n\r\nNOAA Space Weather Scale descriptions can be found at\r\nwww.swpc.noaa.gov/noaa-scales-explanation\r\n\r\nPotential Impacts: Satellite systems may experience significant charging resulting in increased risk to satellite systems.",
+        "expires_at": null,
+        "date": "2019-01-26T14:56:23+00:00",
+        "request_date": "2019-01-27T06:34:40+00:00",
+        "parents": []
+      }]
+    }]
+  }]
+}
